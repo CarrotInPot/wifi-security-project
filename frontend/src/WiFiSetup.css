@@ -1,0 +1,58 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f8f8;
+}
+
+.wifi-setup {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 300px;
+    text-align: center;
+}
+
+.wifi-setup h2 {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.wifi-setup input[type="text"], 
+.wifi-setup input[type="radio"] {
+    margin: 10px 0;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.wifi-setup label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 14px;
+}
+
+.wifi-setup .radio-group {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.wifi-setup button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.recommendation {
+    margin-top: 20px;
+    background-color: #e0ffe0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #00cc00;
+}
