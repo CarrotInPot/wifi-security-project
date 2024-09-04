@@ -14,6 +14,9 @@ const WiFiSetup = () => {
         const normalizedAuthMethod = authMethod.toLowerCase();
 
         // Generate the recommendation based on the input
+        if (usageType === '') {
+            setRecommendation('Please select usage type.');
+        }
         if (normalizedAuthMethod === 'wpa' || normalizedAuthMethod === 'wep' || normalizedAuthMethod === 'open'|| normalizedAuthMethod === 'owe') {
             if (usageType === 'public') {
                 setRecommendation('Alert: Need to upgrade. Recommendation: WPA2-PSK with AES-128 CCMP or Opportunistic Wireless Encryption.');
@@ -38,6 +41,8 @@ const WiFiSetup = () => {
             } else if (usageType === 'business') {
                 setRecommendation('Recommendation: Using the most secure authentication standard. For further security use AES-256 GCM Cipher.');
             }
+        } else if (normalizedAuthMethod === '') {
+            setRecommendation('Please select an authentication method.');
         } else {
             setRecommendation('Invalid Input: Unsupported authentication method.');
         }
@@ -50,10 +55,11 @@ const WiFiSetup = () => {
                 <form onSubmit={handleSubmit}>
                 <label htmlFor="auth-method">Authentication Method</label>
                     <select id="auth-method" value={authMethod} onChange={(e) => setAuthMethod(e.target.value)}>
+                        <option value="">Select Authentication Method</option>
                         <option value="open">Open</option>
-                        <option value="wpa">WPA</option>
-                        <option value="wep">WEP</option>
                         <option value="owe">OWE</option>
+                        <option value="wep">WEP</option>
+                        <option value="wpa">WPA</option>
                         <option value="wpa2">WPA2</option>
                         <option value="wpa3">WPA3</option>
                     </select>
