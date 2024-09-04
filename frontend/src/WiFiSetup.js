@@ -4,7 +4,7 @@ import './WiFiSetup.css';
 const WiFiSetup = () => {
     const [authMethod, setAuthMethod] = useState('');
     const [cipher, setCipher] = useState('');
-    const [usageType, setUsageType] = useState('home');
+    const [usageType, setUsageType] = useState('');
     const [recommendation, setRecommendation] = useState('');
 
     const handleSubmit = (e) => {
@@ -14,7 +14,7 @@ const WiFiSetup = () => {
         const normalizedAuthMethod = authMethod.toLowerCase();
 
         // Generate the recommendation based on the input
-        if (normalizedAuthMethod === 'wpa' || normalizedAuthMethod === 'wep') {
+        if (normalizedAuthMethod === 'wpa' || normalizedAuthMethod === 'wep' || normalizedAuthMethod === 'open'|| normalizedAuthMethod === 'owe') {
             if (usageType === 'public') {
                 setRecommendation('Alert: Need to upgrade. Recommendation: WPA2-PSK with AES-128 CCMP or Opportunistic Wireless Encryption.');
             } else if (usageType === 'home') {
@@ -48,14 +48,15 @@ const WiFiSetup = () => {
             <div className="wifi-setup">
                 <h2>WiFi Security Setup</h2>
                 <form onSubmit={handleSubmit}>
-                    <label htmlFor="auth-method">Authentication Method</label>
-                    <input
-                        type="text"
-                        id="auth-method"
-                        value={authMethod}
-                        onChange={(e) => setAuthMethod(e.target.value)}
-                        placeholder="Enter WPA, WPA2, WPA3, etc."
-                    />
+                <label htmlFor="auth-method">Authentication Method</label>
+                    <select id="auth-method" value={authMethod} onChange={(e) => setAuthMethod(e.target.value)}>
+                        <option value="open">Open</option>
+                        <option value="wpa">WPA</option>
+                        <option value="wep">WEP</option>
+                        <option value="owe">OWE</option>
+                        <option value="wpa2">WPA2</option>
+                        <option value="wpa3">WPA3</option>
+                    </select>
                     
                     <label htmlFor="cipher">Cipher</label>
                     <input
