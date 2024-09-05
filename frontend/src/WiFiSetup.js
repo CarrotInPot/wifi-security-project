@@ -13,38 +13,56 @@ const WiFiSetup = () => {
         // Normalize input (to handle case insensitivity)
         const normalizedAuthMethod = authMethod.toLowerCase();
 
+        let newRecommendation = '';
+
         // Generate the recommendation based on the input
         if (usageType === '') {
-            setRecommendation('Please select usage type.');
-        }
-        if (normalizedAuthMethod === 'wpa' || normalizedAuthMethod === 'wep' || normalizedAuthMethod === 'open'|| normalizedAuthMethod === 'owe') {
+            newRecommendation = 'Please select usage type.';
+        } else if (normalizedAuthMethod === 'wpa' || normalizedAuthMethod === 'wep' || normalizedAuthMethod === 'open' || normalizedAuthMethod === 'owe') {
             if (usageType === 'public') {
-                setRecommendation('Alert: Need to upgrade. Recommendation: WPA2-PSK with AES-128 CCMP or Opportunistic Wireless Encryption.');
+                newRecommendation = 'Alert: Need to upgrade. Recommendation: WPA2-PSK with AES-128 CCMP or Opportunistic Wireless Encryption.';
             } else if (usageType === 'home') {
-                setRecommendation('Alert: Need to upgrade. Recommendation: Use WPA2-PSK with AES-128 CCMP or transition to WPA3-SAE with AES-256 GCM Cipher.');
+                newRecommendation = 'Alert: Need to upgrade. Recommendation: Use WPA2-PSK with AES-128 CCMP or transition to WPA3-SAE with AES-256 GCM Cipher.';
             } else if (usageType === 'retail') {
-                setRecommendation('Alert: Need to upgrade. Recommendation: Upgrade to WPA2-PSK with AES-128 CCMP Cipher.');
+                newRecommendation = 'Alert: Need to upgrade. Recommendation: Upgrade to WPA2-PSK with AES-128 CCMP Cipher.';
             } else if (usageType === 'business') {
-                setRecommendation('Alert: Need to upgrade. Recommendation: Upgrade to WPA2-Enterprise with AES-256 GCM Cipher.');
+                newRecommendation = 'Alert: Need to upgrade. Recommendation: Upgrade to WPA2-Enterprise with AES-256 GCM Cipher.';
             }
         } else if (normalizedAuthMethod === 'wpa2') {
             if (usageType === 'public' || usageType === 'home' || usageType === 'retail') {
-                setRecommendation('Recommendation: WPA2-PSK with AES-128 CCMP or transition to WPA3-SAE with AES-256 GCM Cipher.');
+                newRecommendation = 'Recommendation: WPA2-PSK with AES-128 CCMP or transition to WPA3-SAE with AES-256 GCM Cipher.';
             } else if (usageType === 'business') {
-                setRecommendation('Recommendation: Upgrade to WPA3-Enterprise with AES-256 GCM Cipher');
+                newRecommendation = 'Recommendation: Upgrade to WPA3-Enterprise with AES-256 GCM Cipher';
             }
         } else if (normalizedAuthMethod === 'wpa3') {
             if (usageType === 'public' || usageType === 'retail') {
-                setRecommendation('This is the most secure and authentication standard for Public or Retail use.');
+                newRecommendation = 'This is the most secure and authentication standard for Public or Retail use.';
             } else if (usageType === 'home') {
-                setRecommendation('Recommendation: WPA3-SAE with AES-256 GCM Cipher.');
+                newRecommendation = 'Recommendation: WPA3-SAE with AES-256 GCM Cipher.';
             } else if (usageType === 'business') {
-                setRecommendation('Recommendation: Using the most secure authentication standard. For further security use AES-256 GCM Cipher.');
+                newRecommendation = 'Recommendation: Using the most secure authentication standard. For further security use AES-256 GCM Cipher.';
             }
         } else if (normalizedAuthMethod === '') {
-            setRecommendation('Please select an authentication method.');
+            newRecommendation = 'Please select an authentication method.';
         } else {
-            setRecommendation('Invalid Input: Unsupported authentication method.');
+            newRecommendation = 'Invalid Input: Unsupported authentication method.';
+        }
+
+        // Set the new recommendation to state
+        setRecommendation(newRecommendation);
+
+        // Save recommendation to localStorage only after form submission
+        if (newRecommendation) {
+            const previousRecommendations = JSON.parse(localStorage.getItem('recommendations')) || [];
+            const recommendationData = {
+                authMethod,
+                cipher,
+                usageType,
+                recommendation: newRecommendation,
+                timestamp: new Date().toLocaleString(),
+            };
+            previousRecommendations.push(recommendationData);
+            localStorage.setItem('recommendations', JSON.stringify(previousRecommendations));
         }
     };
 
@@ -53,7 +71,7 @@ const WiFiSetup = () => {
             <div className="wifi-setup">
                 <h2>WiFi Security Setup</h2>
                 <form onSubmit={handleSubmit}>
-                <label htmlFor="auth-method">Authentication Method</label>
+                    <label htmlFor="auth-method">Authentication Method</label>
                     <select id="auth-method" value={authMethod} onChange={(e) => setAuthMethod(e.target.value)}>
                         <option value="">Select Authentication Method</option>
                         <option value="open">Open</option>
