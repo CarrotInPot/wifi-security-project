@@ -1,0 +1,40 @@
+.wifi-settings-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.section {
+    width: 45%;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.step {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.step img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.step p {
+    margin: 0;
+    font-size: 1em;
+    text-align: center;
+    color: #555;
+}
