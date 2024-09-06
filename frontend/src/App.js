@@ -14,7 +14,7 @@ function App() {
                 <nav>
                     <ul>
                         <li>
-                            <Link to="/home">Home</Link>
+                            <Link to="/">Home</Link>
                         </li>
                         <li>
                             <Link to="/wifisettings">How to view WiFi Settings</Link>
@@ -30,7 +30,7 @@ function App() {
 
                 <Routes>
                     {/* Route for the Home page */}
-                    <Route path="/home" element={<Home />} />
+                    <Route path="/" element={<Home />} />
 
                     {/* Route for WiFi Setup */}
                     <Route path="/input" element={<WiFiSetup />} />
