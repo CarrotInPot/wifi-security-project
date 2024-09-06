@@ -1,29 +1,45 @@
-body {
-    font-family: Arial, sans-serif;
+/* Styles for the navigation bar */
+html, body {
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8;
+    box-sizing: border-box;
+    overflow-x: hidden; 
+    width: 100%;
+    height: 100%;
 }
 
-.header {
-    background-color: #cccccc;
-    padding: 10px 20px;
-    text-align: left;
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
+.app {
+    margin: 0;
+    padding: 0;
 }
 
-.navbar {
+nav {
+    background-color: #f1f1f1;  /* Gray background similar to the Home.css */
+    padding: 15px 0;  /* Add padding to make the navigation bar look prominent */
     display: flex;
-    justify-content: flex-end;
-    background-color: #e6e6e6;
-    padding: 10px 20px;
+    justify-content: center;  /* Center the navigation items */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Add a subtle shadow for separation */
 }
 
-.navbar a {
-    margin-left: 20px;
-    text-decoration: none;
-    color: black;
-    font-size: 14px;
+nav ul {
+    list-style: none;  /* Remove bullet points */
+    margin: 0;
+    padding: 0;
+    display: flex;  /* Display items horizontally */
+}
+
+nav ul li {
+    margin: 0 20px;  /* Space between navigation items */
+}
+
+nav ul li a {
+    color: #333;  /* Match text color to the one used in Home.css */
+    text-decoration: none;  /* Remove underline from links */
+    font-size: 1.1em;  /* Slightly increase the font size */
+    font-weight: bold;  /* Bold for better visibility */
+    font-family: Arial, sans-serif;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;  /* Add underline on hover */
 }
