@@ -5,6 +5,8 @@ import WiFiSettings from './WiFiSettings';
 import Recommendations from './Recommendations';
 import Home from './Home';  // Import the new Home component
 import Footer from './Footer';  // Import the footer component
+import AboutUs from './AboutUs';      
+
 import './App.css';
 
 function App() {
@@ -25,6 +27,9 @@ function App() {
                         <li>
                             <Link to="/recommendations">Saved Recommendations</Link>
                         </li>
+                        <li>
+                            <Link to="/about">About Us</Link>
+                        </li>
                     </ul>
                 </nav>
 
@@ -40,6 +45,9 @@ function App() {
 
                     {/* Route for the Recommendations page */}
                     <Route path="/recommendations" element={<Recommendations />} />
+                    
+                    {/* Route for About Us page */}
+                    <Route path="/about" element={<AboutUs />} />
                 </Routes>
                 <Footer />
             </div>
