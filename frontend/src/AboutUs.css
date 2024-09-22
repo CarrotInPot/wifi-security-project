@@ -1,0 +1,65 @@
+/* About Us Page Styling */
+
+.about-container {
+    max-width: 900px; /* Limit the width for better readability */
+    margin: 50px auto; /* Center the container on the page */
+    padding: 40px; /* Add padding inside the container */
+    background-color: #f9f9f9; /* Light background for contrast */
+    border-radius: 10px; /* Rounded corners for the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a card effect */
+    line-height: 1.7; /* Increase line height for readability */
+    font-family: 'Open Sans', Arial, sans-serif; /* Use a modern, clean font */
+    color: #444; /* Darker gray color for better contrast */
+    text-align: left; /* Left-align text for traditional look */
+}
+
+/* Styling for the header */
+.about-header {
+    font-size: 2.5em; /* Larger font size for the header */
+    font-weight: 700; /* Make the header bold */
+    color: #2c3e50; /* Darker color for the header */
+    margin-bottom: 30px; /* Space below the header */
+    text-align: center; /* Center align the header */
+    border-bottom: 2px solid #3498db; /* Add a bottom border for emphasis */
+    padding-bottom: 10px; /* Space between text and bottom border */
+}
+
+/* Styling for the paragraph content */
+.about-content p {
+    margin-bottom: 20px; /* Space between paragraphs */
+    font-size: 1.15em; /* Increase font size for better readability */
+    color: #555; /* Slightly darker text color */
+    line-height: 1.8; /* Comfortable line height for readability */
+}
+
+/* Highlight the first paragraph */
+.about-content p:first-of-type {
+    font-weight: 600; /* Slightly bold for emphasis */
+    font-size: 1.2em; /* Increase size for first paragraph */
+}
+
+/* Highlight the third paragraph with project information */
+.about-content p:nth-of-type(3) {
+    font-weight: 600; /* Bold text for emphasis */
+    background-color: #eef5ff; /* Light blue background for differentiation */
+    padding: 10px; /* Padding inside the highlighted paragraph */
+    border-radius: 5px; /* Rounded corners for the highlighted paragraph */
+}
+
+/* Make the last paragraph stand out as a conclusion */
+.about-content p:last-of-type {
+    margin-bottom: 0; /* Remove bottom margin for the last paragraph */
+    font-style: italic; /* Italicize for emphasis */
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    .about-container {
+        padding: 20px; /* Reduce padding on smaller screens */
+        font-size: 1em; /* Adjust font size for smaller screens */
+    }
+
+    .about-header {
+        font-size: 2em; /* Adjust header size for smaller screens */
+    }
+}

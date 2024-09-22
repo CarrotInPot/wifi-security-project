@@ -27,9 +27,6 @@ function App() {
                         <li>
                             <Link to="/recommendations">Saved Recommendations</Link>
                         </li>
-                        <li>
-                            <Link to="/about">About Us</Link>
-                        </li>
                     </ul>
                 </nav>
 

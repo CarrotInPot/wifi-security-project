@@ -14,7 +14,7 @@ html, body {
 }
 
 nav {
-    background-color: #f1f1f1;  /* Gray background similar to the Home.css */
+    background-color: #D3D3D3;  /* Gray background similar to the Home.css */
     padding: 15px 0;  /* Add padding to make the navigation bar look prominent */
     display: flex;
     justify-content: center;  /* Center the navigation items */
