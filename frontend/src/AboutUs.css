@@ -39,7 +39,7 @@
 }
 
 /* Highlight the third paragraph with project information */
-.about-content p:nth-of-type(3) {
+.about-content p:nth-of-type(5) {
     font-weight: 600; /* Bold text for emphasis */
     background-color: #eef5ff; /* Light blue background for differentiation */
     padding: 10px; /* Padding inside the highlighted paragraph */

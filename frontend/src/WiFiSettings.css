@@ -1,40 +1,84 @@
+/* Styling for the WiFiSettings container */
 .wifi-settings-container {
-    display: flex;
-    justify-content: space-between;
+    max-width: 1200px; /* Wider container for two columns */
+    margin: 40px auto; /* Center the container horizontally */
     padding: 20px;
-    font-family: Arial, sans-serif;
-}
-
-.section {
-    width: 45%;
     background-color: #f9f9f9;
-    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.section h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.step {
-    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Open Sans', Arial, sans-serif;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* Column layout for the container */
+    min-height: 100vh; /* Increase container height to fill viewport */
+    justify-content: space-between; /* Distribute space evenly */
 }
 
-.step img {
-    width: 250px;
-    height: auto;
-    margin-bottom: 10px;
+/* Container for two-column layout */
+.wifi-content {
+    display: flex; /* Flexbox layout for two columns */
+    justify-content: space-between; /* Space between columns */
+    gap: 20px; /* Space between columns */
+    margin-bottom: 30px; /* Space between content and button */
+}
+
+/* Each section in the column */
+.section {
+    flex: 1; /* Make each section take equal space */
+    background-color: #fff; /* White background for sections */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for sections */
+    overflow: hidden; /* Prevent overflow for text and images */
+    min-height: 650px; /* Increase minimum height for more room */
+}
+
+/* Styling for each step */
+.step {
+    display: flex; /* Flexbox layout for step content */
+    flex-direction: column; /* Stack content vertically */
+    align-items: flex-start; /* Align items at the start */
+    margin-bottom: 20px;
 }
 
 .step p {
-    margin: 0;
-    font-size: 1em;
-    text-align: center;
-    color: #555;
+    margin-bottom: 10px; /* Space below the text */
+    font-size: 1em; /* Font size for the text */
+    font-weight: bold; /* Make the text bold */
+    color: #333; /* Darker text color */
+}
+
+/* Styling for step images */
+.step img {
+    width: 100%; /* Make images responsive to container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners for images */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for images */
+    margin-top: 10px; /* Space above the image */
+}
+
+/* Styling for the Next Step button container */
+.next-step-container {
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+    margin-top: auto; /* Push the button to the bottom */
+    padding-top: 20px; /* Add space above the button */
+}
+
+/* Styling for the Next Step button */
+.next-step-button {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    padding: 10px 20px; /* Size of the button */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1em; /* Font size */
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    text-align: center; /* Center the text inside the button */
+}
+
+/* Hover effect for the Next Step button */
+.next-step-button:hover {
+    background-color: #444; /* Darker background on hover */
 }

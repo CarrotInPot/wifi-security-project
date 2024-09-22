@@ -4,6 +4,7 @@
     align-items: center;
     height: 100vh;
     background-color: #f8f8f8;
+    font-family: 'Open Sans', Arial, sans-serif;
 }
 
 .wifi-setup {
@@ -13,10 +14,11 @@
     padding: 30px;
     width: 300px;
     text-align: center;
+    
 }
 
 .wifi-setup h2 {
-    margin-bottom: 20px;
+    margin-bottom: 20px;    
     font-size: 18px;
 }
 
