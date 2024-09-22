@@ -6,6 +6,7 @@ import Recommendations from './Recommendations';
 import Home from './Home';  // Import the new Home component
 import Footer from './Footer';  // Import the footer component
 import AboutUs from './AboutUs';      
+import TermsAndConditions from './TermsAndConditions'; // Import the TermsAndConditions component
 
 import './App.css';
 
@@ -45,6 +46,8 @@ function App() {
                     
                     {/* Route for About Us page */}
                     <Route path="/about" element={<AboutUs />} />
+
+                    <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
                 </Routes>
                 <Footer />
             </div>

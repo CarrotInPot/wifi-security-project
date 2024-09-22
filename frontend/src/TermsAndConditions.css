@@ -1,0 +1,48 @@
+/* TermsAndConditions.css */
+.terms-container {
+    max-width: 800px; /* Limit width for better readability */
+    margin: 40px auto; /* Center container with margin */
+    padding: 20px; /* Padding inside the container */
+    background-color: #ffffff; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    font-family: 'Arial', sans-serif; /* Font style */
+}
+
+.terms-container h1 {
+    text-align: center; /* Center the main heading */
+    font-size: 2em; /* Increase the size of the heading */
+    color: #333; /* Dark text color */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.terms-container h2 {
+    color: #444; /* Slightly lighter text color */
+    font-size: 1.5em; /* Smaller subheadings */
+    margin-top: 30px; /* Space above the subheadings */
+}
+
+.terms-container p {
+    line-height: 1.6; /* Improve readability */
+    color: #666; /* Gray text color */
+    font-size: 1em; /* Standard paragraph size */
+    margin-bottom: 20px; /* Space below each paragraph */
+}
+
+.terms-container a {
+    color: #007BFF; /* Link color */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.terms-container a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.terms-container ul {
+    list-style-type: disc; /* Bulleted lists */
+    margin: 10px 0 10px 20px; /* Margin for lists */
+}
+
+.terms-container li {
+    margin-bottom: 10px; /* Space below each list item */
+}
