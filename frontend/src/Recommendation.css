@@ -1,0 +1,42 @@
+/* Styling for the recommendations container */
+.recommendations-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Styling for each recommendation item */
+.recommendation-item {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between content and button */
+    align-items: flex-start; /* Align items at the start */
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for each item */
+}
+
+/* Styling for the recommendation details */
+.recommendation-details {
+    flex: 1; /* Take up remaining space */
+}
+
+/* Styling for the Remove button */
+.remove-button {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s;
+    align-self: flex-start; /* Align the button at the top */
+}
+
+/* Hover effect for the Remove button */
+.remove-button:hover {
+    background-color: #c9302c;
+}
