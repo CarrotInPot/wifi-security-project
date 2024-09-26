@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-dom'; // Use NavLink instead of Link
 import WiFiSetup from './WiFiSetup';
 import WiFiSettings from './WiFiSettings';
 import Recommendations from './Recommendations';
@@ -18,19 +18,39 @@ function App() {
         <Router>
             <div className="app">
                 <nav>
-                <img src={logo} alt="SecureWiFi Logo" className="logo" />
+                    <img src={logo} alt="SecureWiFi Logo" className="logo" />
                     <ul>
                         <li>
-                            <Link to="/">Home</Link>
+                            <NavLink 
+                                to="/" 
+                                className={({ isActive }) => isActive ? 'active-link' : ''}
+                            >
+                                Home
+                            </NavLink>
                         </li>
                         <li>
-                            <Link to="/wifisettings">How to view WiFi Settings</Link>
+                            <NavLink 
+                                to="/wifisettings" 
+                                className={({ isActive }) => isActive ? 'active-link' : ''}
+                            >
+                                How to view WiFi Settings
+                            </NavLink>
                         </li>
                         <li>
-                            <Link to="/input">Input Information</Link>
+                            <NavLink 
+                                to="/input" 
+                                className={({ isActive }) => isActive ? 'active-link' : ''}
+                            >
+                                Generate Recommendation
+                            </NavLink>
                         </li>
                         <li>
-                            <Link to="/recommendations">Saved Recommendations</Link>
+                            <NavLink 
+                                to="/recommendations" 
+                                className={({ isActive }) => isActive ? 'active-link' : ''}
+                            >
+                                Saved Recommendations
+                            </NavLink>
                         </li>
                     </ul>
                 </nav>
@@ -54,7 +74,6 @@ function App() {
                     <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
                     <Route path="/faqs" element={<FAQs />} />
                     <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-
                 </Routes>
                 <Footer />
             </div>

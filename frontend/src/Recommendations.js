@@ -24,20 +24,24 @@ const Recommendations = () => {
                 <p>No recommendations yet.</p>
             ) : (
                 <ul>
-                    {recommendations.map((rec, index) => (
-                        <li key={index} className="recommendation-item">
-                            <div className="recommendation-details">
-                                <strong>Timestamp:</strong> {rec.timestamp} <br/>
-                                <strong>Authentication Method:</strong> {rec.authMethod} <br/>
-                                <strong>Cipher:</strong> {rec.cipher} <br/>
-                                <strong>Usage Type:</strong> {rec.usageType} <br/>
-                                <strong>Recommendation:</strong> {rec.recommendation} <br/>
-                            </div>
-                            <button onClick={() => removeRecommendation(index)} className="remove-button">
-                                Remove
-                            </button>
-                        </li>
-                    ))}
+                    {recommendations
+                        .slice() // Create a copy of the array
+                        .reverse() // Reverse the array to show latest first
+                        .map((rec, index) => (
+                            <li key={index} className="recommendation-item">
+                                <div className="recommendation-details">
+                                    <strong>Timestamp:</strong> {rec.timestamp} <br/>
+                                    <strong>Authentication Method:</strong> {rec.authMethod} <br/>
+                                    <strong>Cipher:</strong> {rec.cipher} <br/>
+                                    <strong>Usage Type:</strong> {rec.usageType} <br/>
+                                    <strong>Recommendation:</strong> {rec.recommendation} <br/>
+                                </div>
+                                <button onClick={() => removeRecommendation(index)} className="remove-button">
+                                    Remove
+                                </button>
+                            </li>
+                        ))
+                    }
                 </ul>
             )}
         </div>

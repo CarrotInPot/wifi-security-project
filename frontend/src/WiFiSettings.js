@@ -21,6 +21,16 @@ const WiFiSettings = () => {
 
     return (
         <div className="wifi-settings-container">
+            {/* Message at the top */}
+            <div className="info-message">
+                <p>
+                    Before proceeding, please ensure you know your WiFi network's <strong>Authentication Method</strong> and <strong>Cipher</strong>. 
+                </p>
+                <p>
+                These are the steps to view these details on Windows or MacOS, they are necessary for completing the recommendation process.
+                </p>
+            </div>
+
             <div className="wifi-content"> {/* New container for two-column layout */}
                 <div className="section">
                     <h2>For Windows 7 and newer</h2>

@@ -9,7 +9,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a card effect */
     line-height: 1.7; /* Increase line height for readability */
     font-family: 'Open Sans', Arial, sans-serif; /* Use a modern, clean font */
-    color: #444; /* Darker gray color for better contrast */
+    color: #555; /* Darker gray color for better contrast */
     text-align: left; /* Left-align text for traditional look */
 }
 
@@ -17,10 +17,10 @@
 .about-header {
     font-size: 2.5em; /* Larger font size for the header */
     font-weight: 700; /* Make the header bold */
-    color: #2c3e50; /* Darker color for the header */
+    color: black; /* Darker color for the header */
     margin-bottom: 30px; /* Space below the header */
     text-align: center; /* Center align the header */
-    border-bottom: 2px solid #3498db; /* Add a bottom border for emphasis */
+    border-bottom: 2px solid #555; /* Add a bottom border for emphasis */
     padding-bottom: 10px; /* Space between text and bottom border */
 }
 
@@ -41,7 +41,6 @@
 /* Highlight the third paragraph with project information */
 .about-content p:nth-of-type(5) {
     font-weight: 600; /* Bold text for emphasis */
-    background-color: #eef5ff; /* Light blue background for differentiation */
     padding: 10px; /* Padding inside the highlighted paragraph */
     border-radius: 5px; /* Rounded corners for the highlighted paragraph */
 }

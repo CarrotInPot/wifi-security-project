@@ -29,10 +29,10 @@ const TermsAndConditions = () => {
                 but are not limited to, spreading malware, hacking, or attempting to gain unauthorized access to our systems.
             </p>
             
-            <h2>4. Governing Law</h2>
+            <h2>4.Limitation of Liability</h2>
             <p>
-                These terms and conditions are governed by and construed in accordance with the laws of [Your Jurisdiction]. You
-                irrevocably submit to the exclusive jurisdiction of the courts in that location.
+                SecureWiFi will not be liable for any damages arising out of or in connection with your use of the website,
+                including, but not limited to, direct, indirect, incidental, and consequential damages.
             </p>
             
             <h2>5. Privacy Policy</h2>
@@ -53,16 +53,10 @@ const TermsAndConditions = () => {
                 accuracy, completeness, or usefulness of any information on the website.
             </p>
             
-            <h2>8. Limitation of Liability</h2>
-            <p>
-                SecureWiFi will not be liable for any damages arising out of or in connection with your use of the website,
-                including, but not limited to, direct, indirect, incidental, and consequential damages.
-            </p>
-            
             <h2>9. Contact Us</h2>
             <p>
                 If you have any questions about these Terms, please contact us at{' '}
-                <a href="mailto:support@securewifi.example.com">support@securewifi.example.com</a>.
+                <a href="mailto:swh3413@autuni.ac.nz">swh3413@autuni.ac.nz</a>.
             </p>
         </div>
     );

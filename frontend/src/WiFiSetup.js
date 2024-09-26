@@ -10,15 +10,19 @@ const WiFiSetup = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        // Check if all required fields are filled
+        if (!authMethod || !cipher || !usageType) {
+            setRecommendation('Please fill out all fields before submitting.');
+            return; // Exit the function if any field is empty
+        }
+
         // Normalize input (to handle case insensitivity)
         const normalizedAuthMethod = authMethod.toLowerCase();
 
         let newRecommendation = '';
 
         // Generate the recommendation based on the input
-        if (usageType === '') {
-            newRecommendation = 'Please select usage type.';
-        } else if (normalizedAuthMethod === 'wpa' || normalizedAuthMethod === 'wep' || normalizedAuthMethod === 'open' || normalizedAuthMethod === 'owe') {
+        if (normalizedAuthMethod === 'wpa' || normalizedAuthMethod === 'wep' || normalizedAuthMethod === 'open' || normalizedAuthMethod === 'owe') {
             if (usageType === 'public') {
                 newRecommendation = 'Alert: Need to upgrade. Recommendation: WPA2-PSK with AES-128 CCMP or Opportunistic Wireless Encryption.';
             } else if (usageType === 'home') {
@@ -51,8 +55,8 @@ const WiFiSetup = () => {
         // Set the new recommendation to state
         setRecommendation(newRecommendation);
 
-        // Save recommendation to localStorage only after form submission
-        if (newRecommendation) {
+        // Save recommendation to localStorage only if all fields are valid and filled
+        if (authMethod && cipher && usageType) {
             const previousRecommendations = JSON.parse(localStorage.getItem('recommendations')) || [];
             const recommendationData = {
                 authMethod,

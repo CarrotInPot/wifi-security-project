@@ -7,7 +7,7 @@ const FAQs = () => {
     const faqs = [
         {
             question: 'What is SecureWiFi?',
-            answer: 'SecureWiFi is a platform that provides recommendations for setting up secure wireless networks for home, public, retail, and business use.'
+            answer: 'SecureWiFi is a platform that provides best practice recommendations for setting up secure wireless networks for home, public, retail, and business use.'
         },
         {
             question: 'How do I check my Wi-Fi security settings?',
@@ -19,11 +19,11 @@ const FAQs = () => {
         },
         {
             question: 'Can I save my recommendations?',
-            answer: 'Yes, you can save your recommendations. These are stored locally in your browser and can be viewed under the "Saved Recommendations" section.'
+            answer: 'Yes, you can save your recommendations. These are stored automatically and locally in your browser and can be viewed under the "Saved Recommendations" section.'
         },
         {
             question: 'How can I contact support?',
-            answer: 'You can contact support by emailing us at support@securewifi.example.com or by filling out the contact form on our website.'
+            answer: 'You can contact support by emailing us at: swh3413@autuni.ac.nz '
         }
     ];
 

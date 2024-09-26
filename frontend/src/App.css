@@ -51,6 +51,14 @@ nav ul li a:hover {
     text-decoration: underline; /* Underline on hover */
 }
 
+/* Styles for the active link */
+.active-link {
+    color: black; /* Choose a color for the active link */
+    font-weight: bold; /* Make it bold */
+    border-bottom: 2px solid black; /* Add an underline to the active link */
+    padding-bottom: 5px; /* Add some space between the text and the underline */
+}
+
 /* Mobile Adjustments */
 @media (max-width: 768px) {
     nav {
