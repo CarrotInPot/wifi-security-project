@@ -1,11 +1,12 @@
-/* Styles for the navigation bar */
+/* General Styles */
 html, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden; 
+    overflow-x: hidden;
     width: 100%;
     height: 100%;
+    font-family: Arial, sans-serif;
 }
 
 .app {
@@ -13,33 +14,59 @@ html, body {
     padding: 0;
 }
 
+/* Navigation Styles */
 nav {
-    background-color: #D3D3D3;  /* Gray background similar to the Home.css */
-    padding: 15px 0;  /* Add padding to make the navigation bar look prominent */
+    background-color: #D3D3D3; /* Gray background */
+    padding: 15px 20px; /* Add padding for the logo */
     display: flex;
-    justify-content: center;  /* Center the navigation items */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Add a subtle shadow for separation */
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Space between logo and links */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+nav .logo {
+    height: 40px; /* Logo height */
+    margin-right: 20px; /* Space between logo and links */
 }
 
 nav ul {
-    list-style: none;  /* Remove bullet points */
+    list-style: none; /* Remove bullet points */
     margin: 0;
     padding: 0;
-    display: flex;  /* Display items horizontally */
+    display: flex; /* Horizontal alignment */
 }
 
 nav ul li {
-    margin: 0 20px;  /* Space between navigation items */
+    margin: 0 15px; /* Space between links */
 }
 
 nav ul li a {
-    color: #333;  /* Match text color to the one used in Home.css */
-    text-decoration: none;  /* Remove underline from links */
-    font-size: 1.1em;  /* Slightly increase the font size */
-    font-weight: bold;  /* Bold for better visibility */
-    font-family: Arial, sans-serif;
+    color: #333; /* Text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.1em; /* Font size */
+    font-weight: bold; /* Bold text */
 }
 
 nav ul li a:hover {
-    text-decoration: underline;  /* Add underline on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack items vertically on mobile */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack links vertically */
+        align-items: center; /* Center links */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Space between links on mobile */
+    }
+
+    nav .logo {
+        margin: 0 0 10px 0; /* Adjust margin for logo on mobile */
+    }
 }

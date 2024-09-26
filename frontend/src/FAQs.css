@@ -1,0 +1,62 @@
+/* FAQs.css */
+.faqs-container {
+    max-width: 800px; /* Limit the width of the container */
+    margin: 40px auto; /* Center the container horizontally */
+    padding: 20px; /* Padding inside the container */
+    background-color: #ffffff; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    font-family: 'Arial', sans-serif; /* Font style */
+}
+
+.faqs-container h1 {
+    text-align: center; /* Center the heading */
+    font-size: 2em; /* Larger heading size */
+    color: #333; /* Dark heading color */
+    margin-bottom: 30px; /* Space below the heading */
+}
+
+.faqs-list {
+    margin: 0; /* No margin for the list */
+    padding: 0; /* No padding for the list */
+}
+
+.faq-item {
+    margin-bottom: 20px; /* Space below each FAQ item */
+    padding: 15px 20px; /* Padding inside each FAQ item */
+    background-color: #f9f9f9; /* Light background color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for items */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.faq-item:hover {
+    background-color: #f1f1f1; /* Slightly darker background on hover */
+}
+
+.faq-question {
+    display: flex; /* Flexbox layout for question */
+    justify-content: space-between; /* Space between question and toggle icon */
+    align-items: center; /* Align items vertically */
+    font-size: 1.2em; /* Larger font size for question */
+    color: #333; /* Dark text color */
+    font-weight: bold; /* Bold text */
+}
+
+.faq-answer {
+    margin-top: 10px; /* Space above the answer */
+    font-size: 1em; /* Standard font size for answer */
+    color: #555; /* Lighter text color */
+    line-height: 1.5; /* Improve readability */
+}
+
+.toggle-icon {
+    font-size: 1.5em; /* Larger size for toggle icon */
+    color: #888; /* Gray color for icon */
+    transition: transform 0.3s; /* Smooth transition for icon */
+}
+
+.faq-item.open .toggle-icon {
+    transform: rotate(45deg); /* Rotate icon when open */
+}

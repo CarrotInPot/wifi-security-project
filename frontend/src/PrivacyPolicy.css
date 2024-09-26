@@ -1,0 +1,46 @@
+/* PrivacyPolicy.css */
+.privacy-container {
+    max-width: 800px; /* Limit the width of the container */
+    margin: 40px auto; /* Center the container horizontally */
+    padding: 20px; /* Padding inside the container */
+    background-color: #ffffff; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    font-family: 'Arial', sans-serif; /* Font style */
+}
+
+.privacy-container h1 {
+    text-align: center; /* Center the main heading */
+    font-size: 2em; /* Larger heading size */
+    color: #333; /* Dark text color */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.privacy-container h2 {
+    color: #444; /* Slightly lighter text color */
+    font-size: 1.5em; /* Smaller subheadings */
+    margin-top: 30px; /* Space above the subheadings */
+}
+
+.privacy-container p {
+    line-height: 1.6; /* Improve readability */
+    color: #666; /* Gray text color */
+    font-size: 1em; /* Standard paragraph size */
+    margin-bottom: 20px; /* Space below each paragraph */
+}
+
+.privacy-container a {
+    color: #007BFF; /* Link color */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.privacy-container a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.privacy-container .last-updated {
+    text-align: center; /* Center the last updated text */
+    font-size: 0.9em; /* Smaller font size */
+    color: #888; /* Light gray color */
+    margin-top: 30px; /* Space above the last updated text */
+}

@@ -7,6 +7,9 @@ import Home from './Home';  // Import the new Home component
 import Footer from './Footer';  // Import the footer component
 import AboutUs from './AboutUs';      
 import TermsAndConditions from './TermsAndConditions'; // Import the TermsAndConditions component
+import FAQs from './FAQs'; // Import the FAQs component
+import PrivacyPolicy from './PrivacyPolicy';
+import logo from './images/SecureWifiLogo.png'; // Adjust the path to where your logo is located
 
 import './App.css';
 
@@ -15,6 +18,7 @@ function App() {
         <Router>
             <div className="app">
                 <nav>
+                <img src={logo} alt="SecureWiFi Logo" className="logo" />
                     <ul>
                         <li>
                             <Link to="/">Home</Link>
@@ -48,6 +52,9 @@ function App() {
                     <Route path="/about" element={<AboutUs />} />
 
                     <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+                    <Route path="/faqs" element={<FAQs />} />
+                    <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+
                 </Routes>
                 <Footer />
             </div>
