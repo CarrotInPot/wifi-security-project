@@ -17,6 +17,11 @@ const Recommendations = () => {
         localStorage.setItem('recommendations', JSON.stringify(updatedRecommendations));
     };
 
+    // Helper function to capitalize the first letter of a string
+    const capitalizeFirstLetter = (string) => {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    };
+
     return (
         <div className="recommendations-container">
             <h2>Previous Recommendations</h2>
@@ -31,9 +36,9 @@ const Recommendations = () => {
                             <li key={index} className="recommendation-item">
                                 <div className="recommendation-details">
                                     <strong>Timestamp:</strong> {rec.timestamp} <br/>
-                                    <strong>Authentication Method:</strong> {rec.authMethod} <br/>
-                                    <strong>Cipher:</strong> {rec.cipher} <br/>
-                                    <strong>Usage Type:</strong> {rec.usageType} <br/>
+                                    <strong>Security Type:</strong> {rec.securityType.toUpperCase()} <br/>
+                                    <strong>Encryption Type:</strong> {rec.encryptionType} <br/>
+                                    <strong>Usage Type:</strong> {capitalizeFirstLetter(rec.usageType)} <br/>
                                     <strong>Recommendation:</strong> {rec.recommendation} <br/>
                                 </div>
                                 <button onClick={() => removeRecommendation(index)} className="remove-button">

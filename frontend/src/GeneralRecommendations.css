@@ -1,0 +1,49 @@
+/* General Recommendations Container */
+.general-recommendations-container {
+    max-width: 800px; /* Max width of the container */
+    margin: 50px auto; /* Center the container */
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    font-family: 'Open Sans', Arial, sans-serif; /* Font styling */
+}
+
+/* Heading */
+.general-recommendations-container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center; /* Center align heading */
+}
+
+/* List Styling */
+.general-recommendations-container ul {
+    list-style-type: disc; /* Default bullet point */
+    padding-left: 20px; /* Indent the list */
+}
+
+/* List Item Styling */
+.general-recommendations-container ul li {
+    margin-bottom: 15px; /* Space between list items */
+    font-size: 16px;
+    line-height: 1.6; /* Increase line height for readability */
+    color: #555; /* Text color */
+}
+
+/* Responsive Styling */
+@media (max-width: 600px) {
+    .general-recommendations-container {
+        padding: 15px;
+        margin: 20px;
+    }
+
+    .general-recommendations-container h2 {
+        font-size: 20px;
+    }
+
+    .general-recommendations-container ul li {
+        font-size: 14px;
+    }
+}

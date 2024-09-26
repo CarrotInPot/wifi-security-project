@@ -1,28 +1,31 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 import './WiFiSetup.css';
 
 const WiFiSetup = () => {
-    const [authMethod, setAuthMethod] = useState('');
-    const [cipher, setCipher] = useState('');
+    const [securityType, setSecurityType] = useState('');
+    const [encryptionType, setEncryptionType] = useState('');
     const [usageType, setUsageType] = useState('');
     const [recommendation, setRecommendation] = useState('');
+    const [showGeneralButton, setShowGeneralButton] = useState(false); // State to control visibility of the button
+    const navigate = useNavigate(); // Initialize the useNavigate hook for navigation
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
         // Check if all required fields are filled
-        if (!authMethod || !cipher || !usageType) {
+        if (!securityType || !encryptionType || !usageType) {
             setRecommendation('Please fill out all fields before submitting.');
             return; // Exit the function if any field is empty
         }
 
         // Normalize input (to handle case insensitivity)
-        const normalizedAuthMethod = authMethod.toLowerCase();
+        const normalizedSecurityType = securityType.toLowerCase();
 
         let newRecommendation = '';
 
         // Generate the recommendation based on the input
-        if (normalizedAuthMethod === 'wpa' || normalizedAuthMethod === 'wep' || normalizedAuthMethod === 'open' || normalizedAuthMethod === 'owe') {
+        if (normalizedSecurityType === 'wpa' || normalizedSecurityType === 'wep' || normalizedSecurityType === 'open' || normalizedSecurityType === 'owe') {
             if (usageType === 'public') {
                 newRecommendation = 'Alert: Need to upgrade. Recommendation: WPA2-PSK with AES-128 CCMP or Opportunistic Wireless Encryption.';
             } else if (usageType === 'home') {
@@ -32,13 +35,13 @@ const WiFiSetup = () => {
             } else if (usageType === 'business') {
                 newRecommendation = 'Alert: Need to upgrade. Recommendation: Upgrade to WPA2-Enterprise with AES-256 GCM Cipher.';
             }
-        } else if (normalizedAuthMethod === 'wpa2') {
+        } else if (normalizedSecurityType === 'wpa2') {
             if (usageType === 'public' || usageType === 'home' || usageType === 'retail') {
                 newRecommendation = 'Recommendation: WPA2-PSK with AES-128 CCMP or transition to WPA3-SAE with AES-256 GCM Cipher.';
             } else if (usageType === 'business') {
                 newRecommendation = 'Recommendation: Upgrade to WPA3-Enterprise with AES-256 GCM Cipher';
             }
-        } else if (normalizedAuthMethod === 'wpa3') {
+        } else if (normalizedSecurityType === 'wpa3') {
             if (usageType === 'public' || usageType === 'retail') {
                 newRecommendation = 'This is the most secure and authentication standard for Public or Retail use.';
             } else if (usageType === 'home') {
@@ -46,21 +49,24 @@ const WiFiSetup = () => {
             } else if (usageType === 'business') {
                 newRecommendation = 'Recommendation: Using the most secure authentication standard. For further security use AES-256 GCM Cipher.';
             }
-        } else if (normalizedAuthMethod === '') {
-            newRecommendation = 'Please select an authentication method.';
+        } else if (normalizedSecurityType === '') {
+            newRecommendation = 'Please select a security type.';
         } else {
-            newRecommendation = 'Invalid Input: Unsupported authentication method.';
+            newRecommendation = 'Invalid Input: Unsupported security type.';
         }
 
         // Set the new recommendation to state
         setRecommendation(newRecommendation);
 
+        // Show the "View General Recommendations" button only after submit is pressed
+        setShowGeneralButton(true);
+
         // Save recommendation to localStorage only if all fields are valid and filled
-        if (authMethod && cipher && usageType) {
+        if (securityType && encryptionType && usageType) {
             const previousRecommendations = JSON.parse(localStorage.getItem('recommendations')) || [];
             const recommendationData = {
-                authMethod,
-                cipher,
+                securityType,
+                encryptionType,
                 usageType,
                 recommendation: newRecommendation,
                 timestamp: new Date().toLocaleString(),
@@ -70,14 +76,19 @@ const WiFiSetup = () => {
         }
     };
 
+    // Function to navigate to the General Recommendations page
+    const handleGeneralRecommendations = () => {
+        navigate('/general-recommendations'); // Navigate to the general recommendations page
+    };
+
     return (
         <div className="container">
             <div className="wifi-setup">
                 <h2>WiFi Security Setup</h2>
                 <form onSubmit={handleSubmit}>
-                    <label htmlFor="auth-method">Authentication Method</label>
-                    <select id="auth-method" value={authMethod} onChange={(e) => setAuthMethod(e.target.value)}>
-                        <option value="">Select Authentication Method</option>
+                    <label htmlFor="security-type">Security Type</label>
+                    <select id="security-type" value={securityType} onChange={(e) => setSecurityType(e.target.value)}>
+                        <option value="">Select Security Type</option>
                         <option value="open">Open</option>
                         <option value="owe">OWE</option>
                         <option value="wep">WEP</option>
@@ -86,14 +97,14 @@ const WiFiSetup = () => {
                         <option value="wpa3">WPA3</option>
                     </select>
                     
-                    <label htmlFor="cipher">Cipher</label>
-                    <input
-                        type="text"
-                        id="cipher"
-                        value={cipher}
-                        onChange={(e) => setCipher(e.target.value)}
-                        placeholder="Enter AES, TKIP, etc."
-                    />
+                    <label htmlFor="encryption-type">Encryption Type</label>
+                    <select id="encryption-type" value={encryptionType} onChange={(e) => setEncryptionType(e.target.value)}>
+                        <option value="">Select Encryption Type</option>
+                        <option value="AES">AES</option>
+                        <option value="TKIP">TKIP</option>
+                        <option value="CCMP">CCMP</option>
+                        <option value="GCMP">GCMP</option>
+                    </select>
 
                     <label>Usage Type</label>
                     <div className="radio-group">
@@ -145,6 +156,14 @@ const WiFiSetup = () => {
                     <div className="recommendation">
                         <h3>Recommendation</h3>
                         <p>{recommendation}</p>
+                        {/* Button to navigate to the General Recommendations page */}
+                        {showGeneralButton && (
+                            <button 
+                                className="general-recommendation-button" 
+                                onClick={handleGeneralRecommendations}>
+                                View General Recommendations
+                            </button>
+                        )}
                     </div>
                 )}
             </div>

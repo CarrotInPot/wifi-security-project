@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-dom'; // Use NavLink instead of Link
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import WiFiSetup from './WiFiSetup';
 import WiFiSettings from './WiFiSettings';
 import Recommendations from './Recommendations';
@@ -9,6 +9,7 @@ import AboutUs from './AboutUs';
 import TermsAndConditions from './TermsAndConditions'; // Import the TermsAndConditions component
 import FAQs from './FAQs'; // Import the FAQs component
 import PrivacyPolicy from './PrivacyPolicy';
+import GeneralRecommendations from './GeneralRecommendations'; // Import the new GeneralRecommendations component
 import logo from './images/SecureWifiLogo.png'; // Adjust the path to where your logo is located
 
 import './App.css';
@@ -18,39 +19,19 @@ function App() {
         <Router>
             <div className="app">
                 <nav>
-                    <img src={logo} alt="SecureWiFi Logo" className="logo" />
+                <img src={logo} alt="SecureWiFi Logo" className="logo" />
                     <ul>
                         <li>
-                            <NavLink 
-                                to="/" 
-                                className={({ isActive }) => isActive ? 'active-link' : ''}
-                            >
-                                Home
-                            </NavLink>
+                            <Link to="/">Home</Link>
                         </li>
                         <li>
-                            <NavLink 
-                                to="/wifisettings" 
-                                className={({ isActive }) => isActive ? 'active-link' : ''}
-                            >
-                                How to view WiFi Settings
-                            </NavLink>
+                            <Link to="/wifisettings">How to view WiFi Settings</Link>
                         </li>
                         <li>
-                            <NavLink 
-                                to="/input" 
-                                className={({ isActive }) => isActive ? 'active-link' : ''}
-                            >
-                                Generate Recommendation
-                            </NavLink>
+                            <Link to="/input">WiFi Security Setup</Link>
                         </li>
                         <li>
-                            <NavLink 
-                                to="/recommendations" 
-                                className={({ isActive }) => isActive ? 'active-link' : ''}
-                            >
-                                Saved Recommendations
-                            </NavLink>
+                            <Link to="/recommendations">Saved Recommendations</Link>
                         </li>
                     </ul>
                 </nav>
@@ -71,9 +52,14 @@ function App() {
                     {/* Route for About Us page */}
                     <Route path="/about" element={<AboutUs />} />
 
+                    {/* Route for Terms and Conditions */}
                     <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
                     <Route path="/faqs" element={<FAQs />} />
                     <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+
+                    {/* Route for General Recommendations */}
+                    <Route path="/general-recommendations" element={<GeneralRecommendations />} />
+
                 </Routes>
                 <Footer />
             </div>

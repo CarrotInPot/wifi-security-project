@@ -4,7 +4,6 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    
     font-family: 'Open Sans', Arial, sans-serif;
 }
 
@@ -93,6 +92,25 @@
     border: 1px solid #28a745;
     color: #155724;
     font-size: 14px;
+}
+
+/* Add this to your WiFiSetup.css file */
+.recommendation .general-recommendation-button {
+    background-color: #e7f8e9 !important; /* Same background color as the recommendation box */
+    color: #155724 !important; /* Dark green text color */
+    padding: 10px 20px !important; /* Button padding */
+    border: 1px solid #28a745 !important; /* Border matching the recommendation box */
+    border-radius: 8px !important; /* Rounded corners */
+    cursor: pointer !important; /* Pointer cursor on hover */
+    font-size: 1em !important; /* Font size */
+    font-weight: bold !important; /* Bold text */
+    margin-top: 10px !important; /* Space above the button */
+    transition: background-color 0.3s ease !important; /* Smooth background color transition */
+}
+
+/* Hover effect for the general recommendation button */
+.recommendation .general-recommendation-button:hover {
+    background-color: #d4f5da !important; /* Slightly lighter green on hover */
 }
 
 /* Mobile responsive adjustments */
