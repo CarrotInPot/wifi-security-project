@@ -1,5 +1,6 @@
 // src/Footer.js
 import React from 'react';
+import { Link } from 'react-router-dom'; // Use Link for internal routing
 import './Footer.css';  // Assuming you have a dedicated CSS file for the footer styles
 
 const Footer = () => {
@@ -16,12 +17,12 @@ const Footer = () => {
                 <div className="quick-links">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="/wifi-security-project/about">About Us</a></li>
-                        <li><a href="/wifi-security-project/terms-and-conditions">Terms & Conditions</a></li>
-                        <li><a href="/wifi-security-project/faqs">FAQs</a></li>
-                        <li><a href="/wifi-security-project/privacy-policy">Privacy Policy</a></li>
+                        {/* Use Link from react-router-dom to handle navigation properly */}
+                        <li><Link to="/about">About Us</Link></li>
+                        <li><Link to="/terms-and-conditions">Terms & Conditions</Link></li>
+                        <li><Link to="/faqs">FAQs</Link></li>
+                        <li><Link to="/privacy-policy">Privacy Policy</Link></li>
                     </ul>
-                    
                 </div>
             </div>
         </footer>

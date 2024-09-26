@@ -24,7 +24,7 @@ const WiFiSettings = () => {
             {/* Message at the top */}
             <div className="info-message">
                 <p>
-                    Before proceeding, please ensure you know your WiFi network's <strong>Authentication Method</strong> and <strong>Cipher</strong>. 
+                    Before proceeding, please ensure you know your WiFi network's <strong>Security</strong> and <strong>Encryption Type</strong>. 
                 </p>
                 <p>
                 These are the steps to view these details on Windows or MacOS, they are necessary for completing the recommendation process.
