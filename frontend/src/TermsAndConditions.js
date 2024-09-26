@@ -37,7 +37,7 @@ const TermsAndConditions = () => {
             
             <h2>5. Privacy Policy</h2>
             <p>
-                Your privacy is important to us. Please review our <a href="/privacy-policy">Privacy Policy</a> for details on how we
+                Your privacy is important to us. Please review our <a href="/wifi-security-project/privacy-policy">Privacy Policy</a> for details on how we
                 collect, use, and protect your information.
             </p>
             
