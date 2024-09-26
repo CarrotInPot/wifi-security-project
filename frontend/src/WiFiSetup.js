@@ -150,11 +150,11 @@ const WiFiSetup = () => {
                         </label>
                     </div>
                     
-                    <button type="submit">Submit</button>
+                    <button type="submit">Generate Recommendation</button>
                 </form>
                 {recommendation && (
                     <div className="recommendation">
-                        <h3>Recommendation</h3>
+                        <h3>Tailored Recommendation:</h3>
                         <p>{recommendation}</p>
                         {/* Button to navigate to the General Recommendations page */}
                         {showGeneralButton && (

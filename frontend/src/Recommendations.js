@@ -24,7 +24,7 @@ const Recommendations = () => {
 
     return (
         <div className="recommendations-container">
-            <h2>Previous Recommendations</h2>
+            <h2>Saved Recommendations</h2>
             {recommendations.length === 0 ? (
                 <p>No recommendations yet.</p>
             ) : (
