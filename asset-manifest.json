@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/wifi-security-project/static/css/main.48081c8a.css",
+    "main.js": "/wifi-security-project/static/js/main.dfef6eb3.js",
+    "static/media/windows-step1.png": "/wifi-security-project/static/media/windows-step1.bfb001c21f901618b0d2.png",
+    "static/media/mac-step2.png": "/wifi-security-project/static/media/mac-step2.c9cc52fbe7df85b4ebee.png",
+    "static/media/SecureWifiLogo.png": "/wifi-security-project/static/media/SecureWifiLogo.58d3eed1e38071738dc5.png",
+    "static/media/windows-step2.png": "/wifi-security-project/static/media/windows-step2.a9919d164741926e8c4e.png",
+    "static/media/windows-step3_2.png": "/wifi-security-project/static/media/windows-step3_2.a347e95ca90e8163e8fb.png",
+    "static/media/windows-step2_1.png": "/wifi-security-project/static/media/windows-step2_1.0871aa3220275d350feb.png",
+    "static/media/mac-step1.png": "/wifi-security-project/static/media/mac-step1.c36596464e2dee5bea6f.png",
+    "static/media/windows-step3_1.png": "/wifi-security-project/static/media/windows-step3_1.1334ce653d880b6da541.png",
+    "static/media/windows-step3.png": "/wifi-security-project/static/media/windows-step3.1f262c97063f4cbbaf14.png",
+    "static/media/modem.jpg": "/wifi-security-project/static/media/modem.d3014933ef201a8cd634.jpg",
+    "index.html": "/wifi-security-project/index.html",
+    "main.48081c8a.css.map": "/wifi-security-project/static/css/main.48081c8a.css.map",
+    "main.dfef6eb3.js.map": "/wifi-security-project/static/js/main.dfef6eb3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.48081c8a.css",
+    "static/js/main.dfef6eb3.js"
+  ]
+}
