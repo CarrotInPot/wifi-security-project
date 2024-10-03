@@ -2,9 +2,11 @@
 .container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    align-items: flex-start; /* Change from center to flex-start to prevent blocking the top */
+    min-height: 100vh; /* Make sure it takes full screen height */
     font-family: 'Open Sans', Arial, sans-serif;
+    padding: 10px;
+    margin-top: 20px; /* Add margin to prevent overlap */
 }
 
 /* Card style for WiFi setup */
@@ -13,8 +15,10 @@
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     padding: 40px 50px;
-    width: 400px;
+    width: 100%;
+    max-width: 400px; /* Set max width for larger screens */
     text-align: center;
+    margin-top: 50px; /* Add margin to move it down from the top */
 }
 
 /* Title styling */
@@ -93,7 +97,7 @@
     font-size: 14px;
 }
 
-/* Add this to your WiFiSetup.css file */
+/* General recommendation button */
 .recommendation .general-recommendation-button {
     background-color: #D3D3D3    !important; /* Same background color as the recommendation box */
     color: black !important; /* Dark green text color */
@@ -111,7 +115,12 @@
 @media (max-width: 600px) {
     .wifi-setup {
         width: 100%;
-        padding: 30px 20px;
+        padding: 20px 15px;
+        transform: scale(0.9); /* Scale down for smaller screens */
+    }
+
+    .wifi-setup h2 {
+        font-size: 18px;
     }
 
     .wifi-setup .radio-group {
@@ -120,6 +129,17 @@
     }
 
     .wifi-setup .radio-group label {
-        margin: 10px 0;
+        margin: 5px 0;
+    }
+
+    .wifi-setup button {
+        font-size: 14px;
+    }
+
+    /* Further scaling down for very small screens */
+    @media (max-width: 400px) {
+        .wifi-setup {
+            transform: scale(0.9); /* Scale down even more for very small screens */
+        }
     }
 }
