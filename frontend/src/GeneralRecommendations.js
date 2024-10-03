@@ -1,7 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 import './GeneralRecommendations.css'; // Import a CSS file for styling if needed
 
 const GeneralRecommendations = () => {
+    const navigate = useNavigate(); // Initialize the useNavigate hook for navigation
+
+    const handleBack = () => {
+        navigate('/input'); // Navigate back to the WiFi Security Analysis Framework (assuming it's the home route)
+    };
+
     return (
         <div className="general-recommendations-container">
             <h2>General Wi-Fi Security Best Practices</h2>
@@ -17,6 +24,9 @@ const GeneralRecommendations = () => {
                 <li><strong>Turn off remote management features</strong> unless necessary to prevent unauthorized access.</li>
                 <li><strong>Implement Multi-Factor Authentication (MFA)</strong> to strengthen network access controls.</li>
             </ul>
+            <button className="back-button" onClick={handleBack}>
+            ﹤  Back 
+            </button>
         </div>
     );
 };

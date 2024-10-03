@@ -28,7 +28,7 @@ function App() {
                             <Link to="/wifisettings">How to view WiFi Settings</Link>
                         </li>
                         <li>
-                            <Link to="/input">WiFi Security Setup</Link>
+                            <Link to="/input">WiFi Security Analysis Framework</Link>
                         </li>
                         <li>
                             <Link to="/recommendations">Saved Recommendations</Link>

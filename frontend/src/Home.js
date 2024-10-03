@@ -15,8 +15,11 @@ const Home = () => {
             <header className="home-header">
                 <h1>Welcome to SecureWiFi</h1>
                 <p>
-                    SecureWiFi provides you with the best recommendations for setting up a secure wireless network.
-                    Start by inputting your information, and let us help you secure your home, public, retail or business network.
+                Welcome to SecureWiFi: <strong> An Interactive tool (prototype) for wireless network security analysis </strong> that Evaluates your Wi-Fi network security health.
+                </p>
+                <p>
+                It offers home Wi-Fi and businesses to test wireless security assessment and provide recommendations/guidelines for best practices.
+Key Features include saved tailored recommendations, best practices for securing Wi-Fi networks, and responsive design.
                 </p>
                 <button className="get-started-button" onClick={handleGetStarted}>
                     Get Started
