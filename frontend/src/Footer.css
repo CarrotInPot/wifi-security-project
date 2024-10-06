@@ -1,17 +1,17 @@
 html, body {
-    height: 100%;  /* Make sure the body takes up the full height */
+    height: 100%;  /* Ensure full height of the body and html */
     margin: 0;
     padding: 0;
 }
 
 .app {
-    min-height: 100vh;  /* Make the app container take at least the full height of the viewport */
+    min-height: 100vh;  /* The container for the entire app takes up the full viewport height */
     display: flex;
-    flex-direction: column;  /* Make the app container a flexbox */
+    flex-direction: column;  /* Flex container that allows items to stack */
 }
 
-.app > .routes {
-    flex: 1;  /* Make the content section flexible */
+.content {
+    flex-grow: 1;  /* Makes the main content area grow and take up available space */
 }
 
 .home-footer {
@@ -19,21 +19,10 @@ html, body {
     padding: 40px 20px;
     width: 100%;
     box-sizing: border-box;
+    flex-shrink: 0;  /* Ensure the footer stays at the bottom */
     position: relative;
-    bottom: 0;
-    left: 0;
 }
 
-.home-footer {
-    background-color: #D3D3D3;
-    padding: 40px 20px;
-    margin-top: 50px;
-    width: 100vw; /* Full viewport width */
-    position: relative;
-    left: 50%;    /* Ensures correct positioning */
-    transform: translateX(-50%); /* Centers the footer */
-    box-sizing: border-box;  /* Ensures padding doesn't affect width */
-}
 
 .footer-content {
     display: flex;

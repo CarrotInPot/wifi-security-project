@@ -13,10 +13,8 @@ const Home = () => {
     return (
         <div className="home-container">
             <header className="home-header">
-                <div className="home-title">
-                    <h1>Welcome to SecureWiFi</h1>
-                    <img src={logo} alt="Logo" className="home-logo" />
-                </div>
+                <h1>Welcome to SecureWiFi</h1>
+                <img src={logo} alt="Logo" className="home-logo" />
                 <div className="home-description">
                     <p>
                        <strong> "An Interactive tool (prototype) for wireless network security analysis that Evaluates your Wi-Fi network security health" </strong>
