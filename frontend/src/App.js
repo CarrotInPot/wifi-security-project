@@ -25,10 +25,10 @@ function App() {
                             <Link to="/">Home</Link>
                         </li>
                         <li>
-                            <Link to="/wifisettings">How to view WiFi Settings</Link>
+                            <Link to="/wifisettings">How to view Wi-Fi Settings</Link>
                         </li>
                         <li>
-                            <Link to="/input">WiFi Security Analysis Framework</Link>
+                            <Link to="/input">Wi-Fi Security Analysis Framework</Link>
                         </li>
                         <li>
                             <Link to="/recommendations">Saved Recommendations</Link>

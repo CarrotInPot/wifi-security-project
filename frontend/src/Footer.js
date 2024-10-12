@@ -10,7 +10,7 @@ const Footer = () => {
                 <div className="about">
                     <h3>About SecureWiFi</h3>
                     <p>
-                        SecureWiFi is dedicated to providing top-notch security solutions for your wireless networks.
+                        SecureWiFi is dedicated to providing best practice security recommendations for your wireless networks.
                         Our recommendations are tailored to meet your specific needs, ensuring optimal protection and performance.
                     </p>
                 </div>

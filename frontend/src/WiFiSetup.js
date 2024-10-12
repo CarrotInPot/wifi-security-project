@@ -45,8 +45,8 @@ const WiFiSetup = () => {
             } else if (normalizedEncryptionType === 'tkip') {
                 newRecommendation = 'Warning: Your security protocol and encryption method (TKIP) is outdated and no longer considered secure. Attackers can easily exploit vulnerabilities in this encryption. Upgrading to WPA2 or WPA3 with modern encryption standards like AES-CCMP or AES-GCMP is critical. You can change this in your router’s settings or contact an IT professional.';
             }
-            setSectionColor('#E23F44'); // Set section background color to a lighter red for WPA, WEP, and Open
-            alert = 'Major Alert! Immediate action required!';
+            setSectionColor('#FF5B61'); // Set section background color to a lighter red for WPA, WEP, and Open
+            alert = 'High Alert! Immediate action required!';
         } else if (normalizedSecurityType === 'wpa2') {
             if (normalizedEncryptionType === 'aes' || normalizedEncryptionType === 'ccmp' || normalizedEncryptionType === 'gcmp') {
                 if (usageType === 'public' || usageType === 'home' || usageType === 'retail') {
@@ -107,26 +107,26 @@ const WiFiSetup = () => {
     return (
         <div className="container">
             <div className="wifi-setup">
-                <h2>WiFi Security Analysis Framework</h2>
+                <h2>Wi-Fi Security Analysis Framework</h2>
                 <form onSubmit={handleSubmit}>
-                    <label htmlFor="security-type">Security Protocol (WEP, WPA2, etc.)</label>
+                    <label htmlFor="security-type">Security Protocol (eg. WEP, WPA2)</label>
                     <select id="security-type" value={securityType} onChange={(e) => setSecurityType(e.target.value)}>
                         <option value="">Select Security Protocol</option>
-                        <option value="open">Open</option>
-                        <option value="owe">OWE</option>
-                        <option value="wep">WEP</option>
-                        <option value="wpa">WPA</option>
-                        <option value="wpa2">WPA2</option>
-                        <option value="wpa3">WPA3</option>
+                        <option value="open" title="Open: No encryption, easily hackable">Open</option>
+                        <option value="owe" title="OWE: Opportunistic Wireless Encryption for better security in public areas">OWE</option>
+                        <option value="wep" title="WEP: Older and insecure encryption, avoid using">WEP</option>
+                        <option value="wpa" title="WPA: Older, improved version over WEP, but now outdated">WPA</option>
+                        <option value="wpa2" title="WPA2: More secure than WPA, widely used, but not as robust as WPA3">WPA2</option>
+                        <option value="wpa3" title="WPA3: The latest and most secure Wi-Fi standard">WPA3</option>
                     </select>
                     
-                    <label htmlFor="encryption-type">Encryption Type (AES, TKIP, etc.)</label>
+                    <label htmlFor="encryption-type">Encryption Type (eg. AES, TKIP)</label>
                     <select id="encryption-type" value={encryptionType} onChange={(e) => setEncryptionType(e.target.value)}>
                         <option value="">Select Encryption Type</option>
-                        <option value="AES">AES</option>
-                        <option value="TKIP">TKIP</option>
-                        <option value="CCMP">CCMP</option>
-                        <option value="GCMP">GCMP</option>
+                        <option value="AES" title="AES: Advanced Encryption Standard, highly secure">AES</option>
+                        <option value="TKIP" title="TKIP: Outdated, should be avoided">TKIP</option>
+                        <option value="CCMP" title="CCMP: Part of AES, secure">CCMP</option>
+                        <option value="GCMP" title="GCMP: More secure and faster than CCMP, used in WPA3">GCMP</option>
                     </select>
 
                     <label>Usage</label>
@@ -185,10 +185,7 @@ const WiFiSetup = () => {
                         {/* Show the router/modem limitation note only if fields are filled */}
                         {recommendation !== 'Please fill out all fields before submitting.' && (
                             <p style={{ fontSize: '0.85em', marginTop: '10px' }}>
-                                * The security level you can implement may depend on the capabilities of your router or modem. 
-                                Older devices might not support the latest standards like WPA3. If your device doesn’t support the recommended security protocols, 
-                                it may be necessary to upgrade your router or modem to ensure optimal protection. 
-                                Please check the manufacturer's specifications for your router or consult an IT professional for further assistance.
+                                * Your router or modem may not support newer standards like WPA3. If so, upgrading your device might be necessary for optimal protection.
                             </p>
                         )}
 
@@ -197,7 +194,7 @@ const WiFiSetup = () => {
                             <button     
                                 className="general-recommendation-button" 
                                 onClick={handleGeneralRecommendations}>
-                                View General Best Practices
+                                View Best Practices Guideline
                             </button>
                         )}
                     </div>

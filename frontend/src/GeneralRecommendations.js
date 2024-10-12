@@ -11,9 +11,9 @@ const GeneralRecommendations = () => {
 
     return (
         <div className="general-recommendations-container">
-            <h2>General Wi-Fi Security Best Practices</h2>
+            <h2>Best Practices Guideline</h2>
 
-            <h3>All Environments</h3>
+            <h3>For All Wi-Fi Operating Environments: (eg. home, office)</h3>
             <ul>
                 <li><strong>Use strong, regularly updated passwords</strong> to prevent unauthorized access.</li>
                 <li><strong>Avoid personal information in SSID names</strong> and disable SSID broadcasting if unnecessary.</li>
@@ -22,7 +22,7 @@ const GeneralRecommendations = () => {
                 <li><strong>Disable unnecessary services</strong> like UPnP and remote administration to reduce attack surfaces.</li>
             </ul>
 
-            <h3>Office and Retail</h3>
+            <h3>For Office and Retail:</h3>
             <ul>
                 <li><strong>Implement Multi-Factor Authentication (MFA)</strong> to strengthen network access controls.</li>
                 <li><strong>Segment networks</strong> (e.g., guest networks vs. internal networks) to contain security breaches.</li>

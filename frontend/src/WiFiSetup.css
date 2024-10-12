@@ -21,13 +21,19 @@
     margin-top: 50px; /* Add margin to move it down from the top */
 }
 
-/* Title styling */
+/* Title styling with a box around the h2 */
 .wifi-setup h2 {
     margin-bottom: 30px;
     font-size: 22px;
     color: #333;
     font-weight: 600;
+    border: 2px solid #ddd; /* Light border around the box */
+    border-radius: 12px; /* Rounded corners */
+    padding: 15px; /* Padding inside the box */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for 3D effect */
+    text-align: center; /* Ensure the text is centered */
 }
+
 
 /* Input and select styling */
 .wifi-setup select,
@@ -44,7 +50,7 @@
 /* Label styling */
 .wifi-setup label {
     display: block;
-    margin: 15px 0 5px;
+    margin: 10px 0 5px; /* Adjust the top margin to reduce the gap */
     font-size: 16px;
     color: #555;
     text-align: left;
@@ -54,9 +60,10 @@
 .wifi-setup .radio-group {
     display: flex;
     justify-content: space-between;
-    margin: 20px 0;
+    margin: 10px 0; /* Reduce the margin to make the gap smaller */
     padding: 0 10px;
 }
+
 
 /* Radio buttons styling */
 .wifi-setup .radio-group label {
@@ -80,6 +87,7 @@
     font-size: 16px;
     font-weight: 600;
     transition: background-color 0.3s ease;
+    margin-top: 30px; /* Add margin to create space above the button */
 }
 
 /* Hover effect for submit button */
@@ -99,17 +107,24 @@
 
 /* General recommendation button */
 .recommendation .general-recommendation-button {
-    background-color: #D3D3D3    !important; /* Same background color as the recommendation box */
-    color: black !important; /* Dark green text color */
-    padding: 10px 20px !important; /* Button padding */
-    border: 1px solid black !important; /* Border matching the recommendation box */
-    border-radius: 8px !important; /* Rounded corners */
-    cursor: pointer !important; /* Pointer cursor on hover */
-    font-size: 1em !important; /* Font size */
-    font-weight: bold !important; /* Bold text */
-    margin-top: 10px !important; /* Space above the button */
-    transition: background-color 0.3s ease !important; /* Smooth background color transition */
+    background-color: #D3D3D3 !important;
+    color: black !important;
+    padding: 12px 25px !important; /* Increase padding slightly */
+    border: 1px solid black !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+    font-size: 1.05em !important; /* Slightly increase the font size */
+    font-weight: bold !important;
+    margin-top: 15px !important; /* More space above the button */
+    transition: background-color 0.3s ease !important;
 }
+
+.recommendation h3 {
+    font-size: 20px; /* Slightly increase the font size for the alert message */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
 
 /* Mobile responsive adjustments */
 @media (max-width: 600px) {

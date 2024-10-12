@@ -24,7 +24,7 @@ const WiFiSettings = () => {
             {/* Message at the top */}
             <div className="info-message">
                 <p>
-                    Before proceeding, please ensure you know your WiFi network's <strong>Security</strong> and <strong>Encryption Type</strong>. 
+                    Before proceeding, please ensure you know your Wi-Fi network's <strong>Security</strong> and <strong>Encryption Type</strong>. 
                 </p>
                 <p>
                 These are the steps to view these details on Windows or MacOS, they are necessary for completing the recommendation process.
@@ -44,7 +44,7 @@ const WiFiSettings = () => {
                         <img src={step2_1} alt="Step 2.1"/>
                     </div>
                     <div className="step">
-                        <p><strong>Step 3:</strong> Click on your WiFi network name to view the status window. Click on Wireless Properties, then the Security tab to view security type.</p>
+                        <p><strong>Step 3:</strong> Click on your Wi-Fi network name to view the status window. Click on Wireless Properties, then the Security tab to view security type.</p>
                         <img src={step3} alt="Step 3"/>
                         <img src={step3_1} alt="Step 3.1"/>
                         <img src={step3_2} alt="Step 3.2"/>
