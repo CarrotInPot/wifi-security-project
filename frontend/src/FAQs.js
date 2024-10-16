@@ -6,15 +6,15 @@ const FAQs = () => {
     // Define the FAQs as an array of objects
     const faqs = [
         {
-            question: 'What is SecureWiFi?',
-            answer: 'SecureWiFi is a platform that provides best practice recommendations for setting up secure wireless networks for home, public, retail, and business use.'
+            question: 'What is SecureWi-Fi?',
+            answer: 'SecureWi-Fi is a platform that provides best practice recommendations for setting up secure wireless networks for home, public, retail, and business use.'
         },
         {
             question: 'How do I check my Wi-Fi security settings?',
             answer: 'You can check your Wi-Fi security settings by following our step-by-step guides for Windows and MacOS under the "How to View Wi-Fi Settings" section.'
         },
         {
-            question: 'How does SecureWiFi generate recommendations?',
+            question: 'How does SecureWi-Fi generate recommendations?',
             answer: 'Our platform generates recommendations based on the information you provide, such as authentication methods, cipher types, and usage scenarios.'
         },
         {

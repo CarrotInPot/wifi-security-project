@@ -13,7 +13,7 @@ const Home = () => {
     return (
         <div className="home-container">
             <header className="home-header">
-                <h1>Welcome to SecureWiFi</h1>
+                <h1>Welcome to SecureWi-Fi</h1>
                 <img src={logo} alt="Logo" className="home-logo" />
                 <div className="home-description">
                     <p>

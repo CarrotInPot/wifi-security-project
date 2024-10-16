@@ -8,9 +8,9 @@ const Footer = () => {
         <footer className="home-footer">
             <div className="footer-content">
                 <div className="about">
-                    <h3>About SecureWiFi</h3>
+                    <h3>About SecureWi-Fi</h3>
                     <p>
-                        SecureWiFi is dedicated to providing best practice security recommendations for your wireless networks.
+                        SecureWi-Fi is dedicated to providing best practice security recommendations for your wireless networks.
                         Our recommendations are tailored to meet your specific needs, ensuring optimal protection and performance.
                     </p>
                 </div>
