@@ -17,20 +17,19 @@ const Home = () => {
                 <img src={logo} alt="Logo" className="home-logo" />
                 <div className="home-description">
                     <p>
-                       <strong> "An Interactive tool (prototype) for wireless network security analysis that evaluates your Wi-Fi network security health" </strong>
+                       <strong> "An Interactive tool (prototype) for wireless network security analysis and test your Wi-Fi network security health" </strong>
                     </p>
                     <p>
-                        It offers home Wi-Fi and businesses to test wireless security assessment and provide recommendations/guidelines for best practices.
-                        Key features include saved tailored recommendations, best practices for securing Wi-Fi networks, and responsive design.
+                    The system allows home Wi-Fi and businesses to test their Wi-Fi network security status, and it provides recommendation and guidelines for the best practices. The key features include saved tailored recommendations, best practices for securing Wi-Fi networks, and responsive design.
                     </p>
                     <p>
                         Researchers and Developers: Samuel Meads, Leon Lee, Henry Hu
                     </p>
                     <p>
-                        Supervisor: Prof. Nurul Sarkar
+                        Supervisor: Professor Nurul I. Sarkar
                     </p>
                     <p>
-                        Last Updated: Semester 2 2024.
+                        Last Updated: October 2024.
                     </p>
                     <button className="get-started-button" onClick={handleGetStarted}>
                         Get Started
