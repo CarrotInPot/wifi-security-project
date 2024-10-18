@@ -23,7 +23,7 @@ const Home = () => {
                     The system allows home Wi-Fi and businesses to test their Wi-Fi network security status, and it provides recommendation and guidelines for the best practices. The key features include saved tailored recommendations, best practices for securing Wi-Fi networks, and responsive design.
                     </p>
                     <p>
-                        Researchers and Developers: Samuel Meads, Leon Lee, Henry Hu
+                        Researcher/Developer: Samuel Meads, Leon Lee, Henry Hu
                     </p>
                     <p>
                         Supervisor: Professor Nurul I. Sarkar
