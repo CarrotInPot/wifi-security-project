@@ -15,7 +15,9 @@
     font-size: 2em;
     font-weight: bold;
     margin-bottom: 20px;
+    color: #007bff;
 }
+
 
 .home-logo {
     max-width: 150px; /* Adjust the size of the image */
