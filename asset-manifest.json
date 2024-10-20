@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/wifi-security-project/static/css/main.bfe7b142.css",
-    "main.js": "/wifi-security-project/static/js/main.fde639c8.js",
+    "main.css": "/wifi-security-project/static/css/main.7cf650ed.css",
+    "main.js": "/wifi-security-project/static/js/main.55d61bc3.js",
     "static/media/windows-step1.png": "/wifi-security-project/static/media/windows-step1.bfb001c21f901618b0d2.png",
     "static/media/mac-step2.png": "/wifi-security-project/static/media/mac-step2.c9cc52fbe7df85b4ebee.png",
     "static/media/SecureWifiLogo.png": "/wifi-security-project/static/media/SecureWifiLogo.58d3eed1e38071738dc5.png",
@@ -12,11 +12,11 @@
     "static/media/windows-step3_1.png": "/wifi-security-project/static/media/windows-step3_1.1334ce653d880b6da541.png",
     "static/media/windows-step3.png": "/wifi-security-project/static/media/windows-step3.1f262c97063f4cbbaf14.png",
     "index.html": "/wifi-security-project/index.html",
-    "main.bfe7b142.css.map": "/wifi-security-project/static/css/main.bfe7b142.css.map",
-    "main.fde639c8.js.map": "/wifi-security-project/static/js/main.fde639c8.js.map"
+    "main.7cf650ed.css.map": "/wifi-security-project/static/css/main.7cf650ed.css.map",
+    "main.55d61bc3.js.map": "/wifi-security-project/static/js/main.55d61bc3.js.map"
   },
   "entrypoints": [
-    "static/css/main.bfe7b142.css",
-    "static/js/main.fde639c8.js"
+    "static/css/main.7cf650ed.css",
+    "static/js/main.55d61bc3.js"
   ]
 }
