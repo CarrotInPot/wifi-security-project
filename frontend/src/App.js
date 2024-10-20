@@ -25,7 +25,7 @@ function App() {
                             <Link to="/">Home</Link>
                         </li>
                         <li>
-                            <Link to="/wifisettings">How to view Wi-Fi Settings</Link>
+                            <Link to="/wifisettings">Example of Wi-Fi Settings</Link>
                         </li>
                         <li>
                             <Link to="/input">Wi-Fi Security Analysis Framework</Link>

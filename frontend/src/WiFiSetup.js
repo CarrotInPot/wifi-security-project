@@ -10,11 +10,17 @@ const WiFiSetup = () => {
     const [showGeneralButton, setShowGeneralButton] = useState(false); // State to control visibility of the button
     const [sectionColor, setSectionColor] = useState(''); // State to store section background color
     const [alertMessage, setAlertMessage] = useState(''); // State to store alert message
+    const [tooltipText, setTooltipText] = useState(''); // State for tooltip text
     const navigate = useNavigate(); // Initialize the useNavigate hook for navigation
+
+    const handleMouseOver = (event) => {
+        const tooltip = event.target.options[event.target.selectedIndex].getAttribute('data-tooltip');
+        setTooltipText(tooltip); // Update tooltip text based on selected option
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-    
+
         // Check if all required fields are filled
         if (!securityType || !encryptionType || !usageType) {
             setRecommendation('Please fill out all fields before submitting.');
@@ -22,14 +28,14 @@ const WiFiSetup = () => {
             setAlertMessage('');
             return; // Exit the function if any field is empty
         }
-    
+
         let newRecommendation = '';
         let alert = '';
 
         // Normalize input (to handle case insensitivity)
         const normalizedSecurityType = securityType.toLowerCase();
         const normalizedEncryptionType = encryptionType.toLowerCase();
-    
+
         // Generate the recommendation based on security type, encryption type, and usage type
         if (normalizedSecurityType === 'wpa' || normalizedSecurityType === 'open' || normalizedSecurityType === 'wep') {
             if (normalizedEncryptionType === 'aes' || normalizedEncryptionType === 'ccmp' || normalizedEncryptionType === 'gcmp') {
@@ -76,14 +82,14 @@ const WiFiSetup = () => {
         } else {
             newRecommendation = 'Invalid Input: Unsupported security type or encryption type. Please check your settings or consult an IT professional.';
         }
-    
+
         // Set the new recommendation and alert message to state
         setRecommendation(newRecommendation);
         setAlertMessage(alert);
-    
+
         // Show the "View General Recommendations" button only after submit is pressed
         setShowGeneralButton(true);
-    
+
         // Save recommendation to localStorage only if all fields are valid and filled
         if (securityType && encryptionType && usageType) {
             const previousRecommendations = JSON.parse(localStorage.getItem('recommendations')) || [];
@@ -109,25 +115,45 @@ const WiFiSetup = () => {
             <div className="wifi-setup">
                 <h2>Wi-Fi Security Analysis Framework</h2>
                 <form onSubmit={handleSubmit}>
-                    <label htmlFor="security-type">Security Protocol (eg. WEP, WPA2)</label>
-                    <select id="security-type" value={securityType} onChange={(e) => setSecurityType(e.target.value)}>
-                        <option value="">Select Security Protocol</option>
-                        <option value="open" title="Open: No encryption, easily hackable">Open</option>
-                        <option value="owe" title="OWE: Opportunistic Wireless Encryption for better security in public areas">OWE</option>
-                        <option value="wep" title="WEP: Older and insecure encryption, avoid using">WEP</option>
-                        <option value="wpa" title="WPA: Older, improved version over WEP, but now outdated">WPA</option>
-                        <option value="wpa2" title="WPA2: More secure than WPA, widely used, but not as robust as WPA3">WPA2</option>
-                        <option value="wpa3" title="WPA3: The latest and most secure Wi-Fi standard">WPA3</option>
-                    </select>
-                    
-                    <label htmlFor="encryption-type">Encryption Type (eg. AES, TKIP)</label>
-                    <select id="encryption-type" value={encryptionType} onChange={(e) => setEncryptionType(e.target.value)}>
-                        <option value="">Select Encryption Type</option>
-                        <option value="AES" title="AES: Advanced Encryption Standard, highly secure">AES</option>
-                        <option value="TKIP" title="TKIP: Outdated, should be avoided">TKIP</option>
-                        <option value="CCMP" title="CCMP: Part of AES, secure">CCMP</option>
-                        <option value="GCMP" title="GCMP: More secure and faster than CCMP, used in WPA3">GCMP</option>
-                    </select>
+                    <div className="select-wrapper">
+                        <label htmlFor="security-type">Security Protocol (eg. WEP, WPA2)</label>
+                        <div className="tooltip-container">
+                            <select 
+                                id="security-type" 
+                                value={securityType} 
+                                onChange={(e) => setSecurityType(e.target.value)}
+                                onMouseOver={handleMouseOver}
+                            >
+                                <option value="" data-tooltip="Choose a Wi-Fi security protocol">Select Security Protocol</option>
+                                <option value="open" data-tooltip="No encryption, easily hackable">Open</option>
+                                <option value="owe" data-tooltip="Opportunistic Wireless Encryption for better security in public areas">OWE</option>
+                                <option value="wep" data-tooltip="Older and insecure encryption, avoid using">WEP</option>
+                                <option value="wpa" data-tooltip="Improved over WEP, but now outdated">WPA</option>
+                                <option value="wpa2" data-tooltip="More secure than WPA, widely used, but not as robust as WPA3">WPA2</option>
+                                <option value="wpa3" data-tooltip="The latest and most secure Wi-Fi standard">WPA3</option>
+                            </select>
+                            <span className="tooltip-text" id="tooltip-security">{tooltipText}</span>
+                        </div>
+                    </div>
+
+                    <div className="select-wrapper">
+                        <label htmlFor="encryption-type">Encryption Type (eg. AES, TKIP)</label>
+                        <div className="tooltip-container">
+                            <select 
+                                id="encryption-type" 
+                                value={encryptionType} 
+                                onChange={(e) => setEncryptionType(e.target.value)}
+                                onMouseOver={handleMouseOver}
+                            >
+                                <option value="" data-tooltip="Choose an encryption method">Select Encryption Type</option>
+                                <option value="AES" data-tooltip="Advanced Encryption Standard, highly secure">AES</option>
+                                <option value="TKIP" data-tooltip="Outdated, should be avoided">TKIP</option>
+                                <option value="CCMP" data-tooltip="Part of AES, secure">CCMP</option>
+                                <option value="GCMP" data-tooltip="More secure and faster than CCMP, used in WPA3">GCMP</option>
+                            </select>
+                            <span className="tooltip-text" id="tooltip-encryption">{tooltipText}</span>
+                        </div>
+                    </div>
 
                     <label>Usage</label>
                     <div className="radio-group">
@@ -172,16 +198,16 @@ const WiFiSetup = () => {
                             Business
                         </label>
                     </div>
-                    
+
                     <button type="submit">Generate Recommendation</button>
                 </form>
-                
+
                 {/* Display the recommendation if it's not the 'Please fill out all fields' message */}
                 {recommendation && (
                     <div className="recommendation" style={{ backgroundColor: sectionColor }}>
                         <h3>{alertMessage}</h3> {/* Show the alert message */}
                         <p>{recommendation}</p>
-                        
+
                         {/* Show the router/modem limitation note only if fields are filled */}
                         {recommendation !== 'Please fill out all fields before submitting.' && (
                             <p style={{ fontSize: '0.85em', marginTop: '10px' }}>
