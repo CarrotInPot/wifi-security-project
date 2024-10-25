@@ -1,6 +1,7 @@
 // TermsAndConditions.js
 import React from 'react';
 import './TermsAndConditions.css'; // Import the CSS file for styling
+import { Link } from 'react-router-dom'; // Import Link from React Router   
 
 const TermsAndConditions = () => {
     return (
@@ -37,9 +38,9 @@ const TermsAndConditions = () => {
             
             <h2>5. Privacy Policy</h2>
             <p>
-                Your privacy is important to us. Please review our <a href="/wifi-security-project/privacy-policy">Privacy Policy</a> for details on how we
-                collect, use, and protect your information.
-            </p>
+    Your privacy is important to us. Please review our <Link to="/privacy-policy">Privacy Policy</Link> for details on how we 
+    collect, use, and protect your information.
+</p>
             
             <h2>6. Intellectual Property</h2>
             <p>
