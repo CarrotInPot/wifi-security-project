@@ -19,12 +19,12 @@ const Home = () => {
                     <p>
                     <strong>
       <span style={{ color: 'red' }}>
-         "An Interactive tool (prototype) for wireless network security analysis and test your Wi-Fi network security health"
+      "An interactive tool (prototype) for wireless network security analysis and testing your Wi-Fi network's security health."
       </span>
    </strong>
                     </p>
                     <p>
-                    The system allows home Wi-Fi and businesses to test their Wi-Fi network security status, and it provides recommendation and guidelines for the best practices. The key features include saved tailored recommendations, best practices for securing Wi-Fi networks, and responsive design.
+                    The system allows both home Wi-Fi users and businesses to test the security status of their Wi-Fi networks, and it provides recommendations and guidelines for best practices. Key features include tailored recommendations, best practices for securing Wi-Fi networks, and a responsive design.
                     </p>
                     <p>
                         Researcher/Developer: Samuel Meads, Leon Lee, Henry Hu
