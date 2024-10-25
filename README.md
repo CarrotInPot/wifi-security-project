@@ -38,9 +38,9 @@ This tool is designed to help users assess the security of their wireless networ
 
 ### 8. Review the Recommendation
 - A recommendation will appear in a colored box (Red, Orange, or Green) based on the level of urgency:
-  - **Red (Major Alert)**: Immediate action is required to improve your network security.
+  - **Red (High Alert)**: Immediate action is required to improve your network security.
   - **Orange (Medium Alert)**: Consider upgrading your network security to protect against emerging threats.
-  - **Green (No Alert)**: Your network security is up-to-date and no immediate changes are necessary.
+  - **Green (Low Alert)**: Your network security is up-to-date and no immediate changes are necessary.
 - The recommendation will include steps you can take to improve your network security. These steps may involve upgrading your security protocol, encryption, or consulting an IT professional.
 
 ### 9. View General Best Practices
